@@ -1,4 +1,5 @@
 import { useFetch } from "../hooks/useFetch";
+import { NavLink } from "react-router-dom";
 import "./Home.css";
 
 function Home() {
@@ -18,6 +19,9 @@ function Home() {
           <div key={article.id} className="card">
             <h3>{article.title}</h3>
             <p>{article.author}</p>
+            <nav>
+              <NavLink to={`/articles/${article.id}`}>Read more...</NavLink>
+            </nav>
           </div>
         ))}
     </div>
